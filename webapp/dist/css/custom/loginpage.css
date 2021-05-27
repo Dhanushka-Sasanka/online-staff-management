@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+.login, .image {
+	min-height: 100vh;
+}
+
+.bg-image {
+	background-image:
+		url('https://images.pexels.com/photos/583846/pexels-photo-583846.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+	background-size: cover;
+	background-position: center center;
+}
+
+.bg-image-content {
+	/* 	position: absolute; */
+	/* 	top:0; */
+	/* 	right:0; */
+	/* 	bottom:0; */
+	/* 	left:-100px; */
+	/* 	width:100px; */
+	/* 	margin:auto; */
+	/* 	height:120px;	 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-family: fantasy;
+}
