@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.osms.service.AttendanceService;
 import com.osms.service.EmployeeService;
 import com.osms.service.RegistrationService;
+import com.osms.service.impl.AttendanceServiceImpl;
 import com.osms.service.impl.EmployeeServiceImpl;
 import com.osms.service.impl.RegistrationServiceImpl;
 
@@ -21,6 +23,7 @@ public class GetNextIDServlet extends HttpServlet {
 
 	private EmployeeService employeeService;
 	private RegistrationService registrationService;
+	private AttendanceService attendanceService;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -28,6 +31,7 @@ public class GetNextIDServlet extends HttpServlet {
 	public GetNextIDServlet() {
 		this.employeeService = new EmployeeServiceImpl();
 		this.registrationService = new RegistrationServiceImpl();
+		this.attendanceService = new AttendanceServiceImpl();
 	}
 
 	/**
@@ -75,9 +79,15 @@ public class GetNextIDServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			break;
-			
+		case "attendance.jsp":
+			try {
+				nextId = this.attendanceService.getNextID();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
 		}
 		return nextId;
 	}
-
 }

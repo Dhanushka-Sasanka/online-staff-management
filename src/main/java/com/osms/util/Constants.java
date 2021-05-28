@@ -12,4 +12,5 @@ public class Constants {
     /** Constant for employee id prefix */
     public static final String EMPLOYEE_ID_PREFIX = "EMP";
     public static final String REGISTRATION_ID_PREFIX = "REG";
+    public static final String ATTENDANCE_ID_PREFIX = "ATD";
 }

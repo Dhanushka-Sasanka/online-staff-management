@@ -41,7 +41,7 @@
 						<div class="card-header">
 							<i class="fas fa-user me-1"></i> Basic details of registration
 						</div>
-						<div class="card-body col-md-8">
+						<div class="card-body col-md-10">
 
 
 							<c:if test="${registration != null}">
@@ -73,10 +73,6 @@
 								<label for="inputEmail3" class="col-sm-2 col-form-label">EMPLOYEE
 									ID </label>
 								<div class="col-sm-10">
-
-
-
-
 									<select class="custom-select" name="employeId">
 
 										<c:forEach var="employeeID"
@@ -89,14 +85,8 @@
 
 										</c:forEach>
 									</select>
-
-
 								</div>
 							</div>
-
-
-
-
 
 							<div class="form-group row">
 								<label for="inputEmail3" class="col-sm-2 col-form-label">DESIGNATION
@@ -107,8 +97,6 @@
 										value="<c:out value='${registration.designation}'/>">
 								</div>
 							</div>
-
-
 
 							<div class="form-group row">
 								<label for="inputEmail3" class="col-sm-2 col-form-label">DATE
