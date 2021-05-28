@@ -59,12 +59,12 @@
 								<div class="col-sm-10">
 									<c:if test="${registration == null}">
 										<input type="text" class="form-control" id="rid"
-											value="${nextID}" name="rid" readonly="readonly">
+											value="${nextID}" name="rid" readonly="readonly" required="required">
 									</c:if>
 									<c:if test="${registration != null}">
 										<input type="text" class="form-control" id="rid"
 											value="<c:out value='${registration.rid}'/>" name="rid"
-											readonly="readonly">
+											readonly="readonly" required="required">
 									</c:if>
 
 								</div>
@@ -73,7 +73,7 @@
 								<label for="inputEmail3" class="col-sm-2 col-form-label">EMPLOYEE
 									ID </label>
 								<div class="col-sm-10">
-									<select class="custom-select" name="employeId">
+									<select class="custom-select" name="employeId" required="required">
 
 										<c:forEach var="employeeID"
 											items="${employeeIDsNotInRegistration}">
@@ -92,7 +92,7 @@
 								<label for="inputEmail3" class="col-sm-2 col-form-label">DESIGNATION
 								</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="designation"
+									<input type="text" class="form-control" id="designation" required="required"
 										name="designation"
 										value="<c:out value='${registration.designation}'/>">
 								</div>
@@ -103,7 +103,7 @@
 								</label>
 								<div class="col-sm-10">
 									<input type="date" class="form-control" id="dob"
-										name="reg_date"
+										name="reg_date" required="required"
 										value="<c:out value='${registration.reg_date}'/>">
 								</div>
 							</div>
@@ -111,7 +111,7 @@
 								<label for="inputEmail3" class="col-sm-2 col-form-label">EMPLOYEE
 									LEVEL </label>
 								<div class="col-sm-10">
-									<select class="custom-select" name="level">
+									<select class="custom-select" name="level" required="required">
 
 										<option selected
 											value="<c:out value="${registration.level}" />">
@@ -134,8 +134,8 @@
 
 							<div class="form-group row">
 								<label for="inputEmail3" class="col-sm-2 col-form-label">REG_BY</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="reg_by"
+								<div class="col-sm-10" >
+									<input type="text" class="form-control" id="reg_by" required="required"
 										name="reg_by" value="<c:out value='${registration.reg_by}'/>">
 								</div>
 							</div>

@@ -24,27 +24,27 @@ public class AttendanceServiceImpl implements AttendanceService {
 
 	@Override
 	public Attendance getAttendanceByID(String attendanceID) throws FileNotFoundException, SQLException, Exception {
-		Attendance Attendance = null;
+		Attendance attendance = null;
 		String sql = "Select * from attendance where aid = ? ";
 		ResultSet rst = CrudUtil.executeQuery(sql, attendanceID);
 		while (rst.next()) {
-			Attendance = new Attendance(rst.getString(1), rst.getString(2), rst.getDate(3), rst.getTime(4),
+			attendance = new Attendance(rst.getString(1), rst.getString(2), rst.getDate(3), rst.getTime(4),
 					rst.getTime(5),rst.getString(6));
 		}
-		return Attendance;
+		return attendance;
 	}
 
 	@Override
 	public List<Attendance> getAttendances() throws FileNotFoundException, SQLException, Exception {
-		List<Attendance> Attendances = new ArrayList<>();
+		List<Attendance> attendance = new ArrayList<>();
 
 		String sql = "SELECT *  from attendance ORDER BY convert(aid, DECIMAL)";
 		ResultSet rst = CrudUtil.executeQuery(sql);
 		while (rst.next()) {
-			Attendances.add(new Attendance(rst.getString(1), rst.getString(2), rst.getDate(3), rst.getTime(4),
+			attendance.add(new Attendance(rst.getString(1), rst.getString(2), rst.getDate(3), rst.getTime(4),
 					rst.getTime(5),rst.getString(6)));
 		}
-		return Attendances;
+		return attendance;
 	}
 
 	@Override
@@ -63,19 +63,19 @@ public class AttendanceServiceImpl implements AttendanceService {
 	
 	@Override
 	public String getNextID() throws Exception{
-		List<String> AttendanceIds = getAllAttendanceIDs();
-		return IDGenerator.generateIDs(AttendanceIds, Constants.ATTENDANCE_ID_PREFIX);
+		List<String> attendanceIds = getAllAttendanceIDs();
+		return IDGenerator.generateIDs(attendanceIds, Constants.ATTENDANCE_ID_PREFIX);
 	}
 
 	@Override
 	public List<String> getAllAttendanceIDs() throws Exception {
-		List<String> AttendanceIds = new ArrayList<>();
+		List<String> attendanceIds = new ArrayList<>();
 
 		String sql = "SELECT aid from attendance";
 		ResultSet rst = CrudUtil.executeQuery(sql);
 		while (rst.next()) {
-			AttendanceIds.add(rst.getString(1));
+			attendanceIds.add(rst.getString(1));
 		}
-		return AttendanceIds;
+		return attendanceIds;
 	}
 }

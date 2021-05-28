@@ -24,11 +24,11 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h3 class="mt-4">REGISTRATION DETAILS</h3>
+					<h3 class="mt-4">SALARY DETAILS</h3>
 
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-users me-1"></i> All details of registrations
+							<i class="fas fa-users me-1"></i> All details of salaries
 						</div>
 						<div class="card-body col-md-12">
 
@@ -36,32 +36,28 @@
 							<table class="table table-hover">
 								<thead>
 									<tr class="bg-secondary">
+										<th scope="col" class="text-white">#SALARY_ID</th>
 										<th scope="col" class="text-white">#RID</th>
-										<th scope="col" class="text-white">#EMP_ID</th>
-										<th scope="col" class="text-white">DESIGNATION</th>
-										<th scope="col" class="text-white">REG_DATE</th>
-										<th scope="col" class="text-white">LEVEL</th>
-										<th scope="col" class="text-white">REG_BY</th>
+										<th scope="col" class="text-white">DATE</th>
+										<th scope="col" class="text-white">PAID AMOUNT</th>
 										<th scope="col" class="text-white">ACTION</th>
 									</tr>
 								</thead>
 								<tbody>
 								
 								
-									<c:forEach var="registration" items="${listRegistrations}">
+									<c:forEach var="salary" items="${listSalarys}">
 										<tr>
-											<td><c:out value="${registration.rid}" /></td>
-											<td><c:out value="${registration.employeId}" /></td>
-											<td><c:out value="${registration.designation}" /></td>
-											<td><c:out value="${registration.reg_date}" /></td>
-											<td><c:out value="${registration.level}" /></td>
-											<td><c:out value="${registration.reg_by}" /></td>
+											<td><c:out value="${salary.salaryID}" /></td>
+											<td><c:out value="${salary.rid}" /></td>
+											<td><c:out value="${salary.payDate}" /></td>
+											<td><c:out value="${salary.amount}" /></td>
 											<td>
-											<a class="btn btn-success" href="edit?id=<c:out value='${registration.rid}'/>">
+											<a class="btn btn-success" href="edit?id=<c:out value='${salary.salaryID}'/>">
 											EDIT</a>
 												&nbsp;&nbsp;&nbsp;&nbsp; <a
 												class="btn btn-danger"
-												href="delete?id=<c:out value='${registration.rid}' />">REMOVE</a></td>
+												href="delete?id=<c:out value='${salary.salaryID}' />">REMOVE</a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

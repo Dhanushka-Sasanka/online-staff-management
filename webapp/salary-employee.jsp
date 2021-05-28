@@ -27,42 +27,42 @@
 
 					<caption>
 						<h2>
-							<c:if test="${employee != null}">
-								<h3 class="mt-4">EDIT EMPLOYEE</h3>
+							<c:if test="${existingSalary != null}">
+								<h3 class="mt-4">EDIT SALARY</h3>
 							</c:if>
-							<c:if test="${employee == null}">
-								<h3 class="mt-4">ADD EMPLOYEE</h3>
+							<c:if test="${existingSalary == null}">
+								<h3 class="mt-4">ADD SALARY</h3>
 							</c:if>
 						</h2>
 					</caption>
 					
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-user me-1"></i> Basic details of employee
+							<i class="fas fa-user me-1"></i> Basic details of employee salaries
 						</div>
 						<div class="card-body col-md-8">
 
 
-							<c:if test="${employee != null}">
+							<c:if test="${existingSalary != null}">
 								<form action="update" method="post">
 							</c:if>
-							<c:if test="${employee == null}">
+							<c:if test="${existingSalary == null}">
 								<form action="insert" method="post">
 							</c:if>
 
 
 							<div class="form-group row">
-								<label for="inputEmail3" class="col-sm-2 col-form-label">Employee
+								<label for="inputEmail3" class="col-sm-2 col-form-label">SALARY
 									ID</label>
 
 								<div class="col-sm-10">
-									<c:if test="${employee == null}">
-										<input type="text" class="form-control" id="employeeID"
-											value="${nextID}" name="employeeID" readonly="readonly" required="required">
+									<c:if test="${existingSalary == null}">
+										<input type="text" class="form-control" id="salaryID"
+											value="${nextID}" name="salaryID" readonly="readonly" required="required">
 									</c:if>
-									<c:if test="${employee != null}">
-										<input type="text" class="form-control" id="employeeID"
-											value="<c:out value='${employee.eid}'/>" name="employeeID"
+									<c:if test="${existingSalary != null}">
+										<input type="text" class="form-control" id="salaryID"
+											value="<c:out value='${existingSalary.salaryID}'/>" name="salaryID"
 											readonly="readonly" required="required">
 									</c:if>
 
@@ -70,48 +70,55 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="inputEmail3" class="col-sm-2 col-form-label">Full
-									Name</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="fullname"
-										name="fullname" required="required" value="<c:out value='${employee.fullName}'/>">
-								</div>
-							</div>
+								<label for="registerID" class="col-sm-2 col-form-label">REG
+									ID</label>
 
-							<div class="form-group row">
-								<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" id="employee-email"
-										name="employee-email" required="required"
-										value="<c:out value='${employee.email}'/>">
+									<select class="custom-select" name="registerID"
+										required="required">
+
+										<c:if test="${existingSalary != null}">
+											<option selected
+												value="<c:out value="${existingSalary.rid}" />">
+												<c:out value="${existingSalary.rid}" /></option>
+										</c:if>
+
+										<c:forEach var="registrationID" items="${registrationIDs}">
+
+											<option value="<c:out value="${registrationID}" />">
+												<c:out value="${registrationID}" /></option>
+
+										</c:forEach>
+									</select>
 								</div>
 							</div>
+							
 
 							<div class="form-group row">
 								<label for="inputEmail3" class="col-sm-2 col-form-label">Date
-									Of Birth</label>
+							</label>
 								<div class="col-sm-10">
-									<input type="date" class="form-control" id="dob" name="dob" required="required"
-										value="<c:out value='${employee.dateOfBirth}'/>">
+									<input type="date" class="form-control" id="paymentDate" name="paymentDate" required="required"
+										value="<c:out value='${existingSalary.payDate}'/>">
 								</div>
 							</div>
 
 							<div class="form-group row">
-								<label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+								<label for="amount" class="col-sm-2 col-form-label">Amount LKR</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="address" required="required"
-										name="address" value="<c:out value='${employee.address}'/>">
+									<input type="text" class="form-control" id="amount" required="required"
+										name="amount" value="<c:out value='${existingSalary.amount}'/>">
 								</div>
 							</div>
-							<c:if test="${employee != null}">
+							<c:if test="${existingSalary != null}">
 								<button type="submit"
 									class="btn btn-primary text-uppercase mb-2 mt-4 rounded-pill shadow-sm">
-									EDIT</button>
+									EDIT PAYMENT</button>
 							</c:if>
-							<c:if test="${employee == null}">
+							<c:if test="${existingSalary == null}">
 								<button type="submit"
 									class="btn btn-success text-uppercase mb-2 mt-4 rounded-pill shadow-sm">
-									SAVE</button>
+									SAVE PAYMENT</button>
 							</c:if>
 							</form>
 

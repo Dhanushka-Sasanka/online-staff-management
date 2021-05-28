@@ -36,7 +36,7 @@
 					data-bs-target="#collapseRegistration" aria-expanded="false"
 					aria-controls="collapseLayouts">
 					<div class="sb-nav-link-icon">
-						<i class="fas fa-users"></i>
+						<i class="fas fa-registered"></i>
 					</div> Registration
 					<div class="sb-sidenav-collapse-arrow">
 						<i class="fas fa-angle-down"></i>
@@ -58,7 +58,7 @@
 					data-bs-target="#attendanceEmployee" aria-expanded="false"
 					aria-controls="collapseLayouts">
 					<div class="sb-nav-link-icon">
-						<i class="fas fa-users"></i>
+						<i class="fas fa-clipboard-user"></i>
 					</div> Attendance
 					<div class="sb-sidenav-collapse-arrow">
 						<i class="fas fa-angle-down"></i>
@@ -71,6 +71,28 @@
 							href="<%=request.getContextPath()%>/attendance/new">Mark Attendance</a> <a
 							class="nav-link"
 							href="<%=request.getContextPath()%>/attendance/list">All
+							Details</a>
+					</nav>
+				</div>
+				
+				<!--Salary navigations -->
+				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+					data-bs-target="#salaryEmployee" aria-expanded="false"
+					aria-controls="collapseLayouts">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-hand-holding-usd"></i>
+					</div> Salary
+					<div class="sb-sidenav-collapse-arrow">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+				<div class="collapse" id="salaryEmployee"
+					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+					<nav class="sb-sidenav-menu-nested nav">
+						<a class="nav-link"
+							href="<%=request.getContextPath()%>/salary/new">Pay Salary</a> <a
+							class="nav-link"
+							href="<%=request.getContextPath()%>/salary/list">All
 							Details</a>
 					</nav>
 				</div>

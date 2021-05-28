@@ -24,11 +24,11 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h3 class="mt-4">REGISTRATION DETAILS</h3>
+					<h3 class="mt-4">ATTENDANCE DETAILS</h3>
 
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-users me-1"></i> All details of REGISTRATION
+							<i class="fas fa-users me-1"></i> All details of attendance
 						</div>
 						<div class="card-body col-md-12">
 
