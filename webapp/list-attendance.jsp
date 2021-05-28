@@ -1,7 +1,7 @@
 <%@page import="com.osms.servlet.EmployeeServlet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,8 @@
 
 </head>
 <body>
+
+<% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
 	<!-- header end -->
@@ -46,8 +48,8 @@
 									</tr>
 								</thead>
 								<tbody>
-								
-								
+
+
 									<c:forEach var="attendance" items="${listAttendances}">
 										<tr>
 											<td><c:out value="${attendance.aid}" /></td>
@@ -56,11 +58,9 @@
 											<td><c:out value="${attendance.in}" /></td>
 											<td><c:out value="${attendance.out}" /></td>
 											<td><c:out value="${attendance.description}" /></td>
-											<td>
-											<a class="btn btn-success" href="edit?id=<c:out value='${attendance.aid}'/>">
-											EDIT</a>
-												&nbsp;&nbsp;&nbsp;&nbsp; <a
-												class="btn btn-danger"
+											<td><a class="btn btn-success"
+												href="edit?id=<c:out value='${attendance.aid}'/>"> EDIT</a>
+												&nbsp;&nbsp;&nbsp;&nbsp; <a class="btn btn-danger"
 												href="delete?id=<c:out value='${attendance.aid}' />">REMOVE</a></td>
 										</tr>
 									</c:forEach>
@@ -72,7 +72,7 @@
 					</div>
 
 				</div>
-				
+
 			</main>
 
 

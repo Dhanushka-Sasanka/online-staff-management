@@ -9,6 +9,8 @@
 
 </head>
 <body>
+
+<% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
 	<!-- header end -->

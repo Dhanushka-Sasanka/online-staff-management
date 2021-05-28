@@ -96,11 +96,33 @@
 							Details</a>
 					</nav>
 				</div>
+				
+				<!--Users navigations -->
+				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+					data-bs-target="#usersAdmin" aria-expanded="false"
+					aria-controls="collapseLayouts">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-users"></i>
+					</div> Users
+					<div class="sb-sidenav-collapse-arrow">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+				<div class="collapse" id="usersAdmin"
+					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+					<nav class="sb-sidenav-menu-nested nav">
+						<a class="nav-link"
+							href="<%=request.getContextPath()%>/user/new">Add User</a> <a
+							class="nav-link"
+							href="<%=request.getContextPath()%>/user/list">All
+							Details</a>
+					</nav>
+				</div>
 
 			</div>
 		</div>
 		<div class="sb-sidenav-footer">
-			<div class="small">Logged in as:</div>
+			<div class="small">Logged in as: <b>${valiedUser}</b></div>
 			Staff Management
 		</div>
 	</nav>

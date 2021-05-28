@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,16 @@
 						<div class="row">
 							<div class="col-lg-10 col-xl-7 mx-auto">
 								<h2 class="mb-4">LOGIN</h2>
-								<form action="LoginServlet" method="GET">
+
+
+
+								<c:if test="${message != null}">
+									<div class="alert alert-danger" role="alert">
+									User name or Password Incorrect..!</div>
+								</c:if>
+
+
+								<form action="login" method="post">
 									<div class="form-group mb-3">
 										<input id="inputEmail" type="text" placeholder="Username"
 											required="required" autofocus="" name="username"
@@ -51,7 +61,7 @@
 
 									<button type="submit"
 										class="btn btn-primary btn-block text-uppercase mb-2 mt-4 rounded-pill shadow-sm">
-										Login </button>
+										Login</button>
 								</form>
 							</div>
 						</div>

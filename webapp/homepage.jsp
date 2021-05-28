@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,11 @@
 
 </head>
 <body>
+
+<% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
+
+
+
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
 	<!-- header end -->
@@ -22,8 +28,8 @@
 		<!-- side-bar start -->
 		<jsp:include page="side-bar.jsp"></jsp:include>
 		<!-- side-bar end -->
-		
-		
+
+
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
@@ -96,7 +102,7 @@
 		</div>
 	</div>
 
-		<script src="dist/js/jquery-3.3.1.min.js"></script>
+	<script src="dist/js/jquery-3.3.1.min.js"></script>
 	<script src="dist/js/bootstrap.bundle.min.js"></script>
 	<script src="dist/js/custom/script.js"></script>
 </body>

@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
 <% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
@@ -26,11 +25,11 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h3 class="mt-4">EMPLOYEES DETAILS</h3>
+					<h3 class="mt-4">SALARY DETAILS</h3>
 
 					<div class="card mb-4">
 						<div class="card-header">
-							<i class="fas fa-users me-1"></i> All details of employees
+							<i class="fas fa-users me-1"></i> All details of salaries
 						</div>
 						<div class="card-body col-md-12">
 
@@ -38,30 +37,28 @@
 							<table class="table table-hover">
 								<thead>
 									<tr class="bg-secondary">
-										<th scope="col" class="text-white">#ID</th>
-										<th scope="col" class="text-white">Full Name</th>
-										<th scope="col" class="text-white">Email</th>
-										<th scope="col" class="text-white">Address</th>
-										<th scope="col" class="text-white">DOB</th>
+										<th scope="col" class="text-white">#USER_ID</th>
+										<th scope="col" class="text-white">USERNAME</th>
+										<th scope="col" class="text-white">PASSWORD</th>
+										<th scope="col" class="text-white">USERROLE</th>
 										<th scope="col" class="text-white">ACTION</th>
 									</tr>
 								</thead>
 								<tbody>
 								
 								
-									<c:forEach var="employee" items="${listEmployees}">
+									<c:forEach var="user" items="${listUsers}">
 										<tr>
-											<td><c:out value="${employee.eid}" /></td>
-											<td><c:out value="${employee.fullName}" /></td>
-											<td><c:out value="${employee.email}" /></td>
-											<td><c:out value="${employee.address}" /></td>
-											<td><c:out value="${employee.dateOfBirth}" /></td>
+											<td><c:out value="${user.userID}" /></td>
+											<td><c:out value="${user.userName}" /></td>
+											<td><c:out value="${user.password}" /></td>
+											<td><c:out value="${user.userRole}" /></td>
 											<td>
-											<a class="btn btn-success" href="edit?id=<c:out value='${employee.eid}'/>">
+											<a class="btn btn-success" href="edit?id=<c:out value='${user.userID}'/>">
 											EDIT</a>
 												&nbsp;&nbsp;&nbsp;&nbsp; <a
 												class="btn btn-danger"
-												href="delete?id=<c:out value='${employee.eid}' />">REMOVE</a></td>
+												href="delete?id=<c:out value='${user.userID}' />">REMOVE</a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

@@ -10,6 +10,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
+<% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
 	<!-- header end -->
@@ -106,7 +107,7 @@
 							<div class="form-group row">
 								<label for="amount" class="col-sm-2 col-form-label">Amount LKR</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="amount" required="required"
+									<input type="number" class="form-control" id="amount" required="required"
 										name="amount" value="<c:out value='${existingSalary.amount}'/>">
 								</div>
 							</div>
