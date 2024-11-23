@@ -118,7 +118,6 @@ public class EmployeeServlet extends HttpServlet {
 
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("HEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/new-employee.jsp");
 		dispatcher.forward(request, response);
 

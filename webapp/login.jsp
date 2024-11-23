@@ -16,7 +16,7 @@
 			<div class="col-md-6 d-none d-md-flex bg-image">
 
 				<div class="bg-image-content">
-					<h1>
+					<h1 style="font-size: 3.5rem">
 						Staff <br /> Management <br />System
 					</h1>
 				</div>
