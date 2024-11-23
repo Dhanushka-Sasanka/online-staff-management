@@ -15,7 +15,6 @@ public class Attendance {
 	
 	public Attendance() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 

@@ -25,7 +25,6 @@ public class SalaryServiceImpl implements SalaryService {
 	public Salary getSalaryByID(String salaryID) throws FileNotFoundException, SQLException, Exception {
 		Salary salarys = null;
 		String sql = "select * from salary where salaryid = ? ";
-		System.out.println(sql);
 		ResultSet rst = CrudUtil.executeQuery(sql, salaryID);
 		while (rst.next()) {
 			salarys = new Salary(rst.getString(1), rst.getString(2), rst.getDate(3), rst.getDouble(4));
@@ -74,6 +73,17 @@ public class SalaryServiceImpl implements SalaryService {
 			AttendanceIds.add(rst.getString(1));
 		}
 		return AttendanceIds;
+	}
+
+	@Override
+	public int getAllSalaryCost() throws Exception {
+		int totalSalaryCost = 0;
+		String sql = "SELECT SUM(amount) FROM salary";
+		ResultSet rst = CrudUtil.executeQuery(sql);
+		while (rst.next()) {
+			totalSalaryCost = rst.getInt(1);
+		}
+		return totalSalaryCost;
 	}
 
 }

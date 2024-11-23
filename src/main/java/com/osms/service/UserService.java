@@ -71,5 +71,9 @@ public interface UserService {
 	 * @return boolean
 	 */
 	public User getUserAuthority(String userName , String password ) throws FileNotFoundException, SQLException, Exception;
-	
+
+	/**
+	 * getting existing User count
+	 */
+    int getAllUsersCount() throws Exception;
 }

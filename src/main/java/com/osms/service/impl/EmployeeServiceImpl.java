@@ -91,5 +91,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return RegistrationIds;
 	}
 
+	@Override
+	public int getAllEmployeeCount() throws Exception {
+
+		int totalEmployeeCount = 0;
+		String sql = "SELECT COUNT(*) FROM employee";
+		ResultSet rst = CrudUtil.executeQuery(sql);
+		while (rst.next()) {
+			totalEmployeeCount = rst.getInt(1);
+		}
+		return totalEmployeeCount;
+	}
+
 
 }

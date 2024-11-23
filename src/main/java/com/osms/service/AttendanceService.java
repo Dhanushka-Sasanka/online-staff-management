@@ -63,5 +63,9 @@ public interface AttendanceService {
 	 * @return List<String>
 	 */
 	public List<String> getAllAttendanceIDs()throws Exception;
-	
+
+	/**
+	 * getting existing Attendance count
+	 */
+    int getAllAttendanceCount()throws Exception;
 }

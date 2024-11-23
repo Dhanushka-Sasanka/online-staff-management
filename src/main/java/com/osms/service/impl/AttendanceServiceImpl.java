@@ -78,4 +78,15 @@ public class AttendanceServiceImpl implements AttendanceService {
 		}
 		return attendanceIds;
 	}
+
+	@Override
+	public int getAllAttendanceCount() throws Exception {
+		int totalAttendanceCount = 0;
+		String sql = "SELECT COUNT(*) FROM attendance where MONTH(DATE) = MONTH(CURDATE())";
+		ResultSet rst = CrudUtil.executeQuery(sql);
+		while (rst.next()) {
+			totalAttendanceCount = rst.getInt(1);
+		}
+		return totalAttendanceCount;
+	}
 }

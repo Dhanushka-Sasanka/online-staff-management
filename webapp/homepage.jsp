@@ -18,10 +18,11 @@
 <% if(session.getAttribute("valiedUser") == null){ response.sendRedirect(request.getContextPath()+"/login.jsp");} %>
 
 
-
 	<!-- header start -->
 	<jsp:include page="navigation.jsp"></jsp:include>
 	<!-- header end -->
+
+	<jsp:include  page="/HomepageDataServlet"></jsp:include >
 
 	<div id="layoutSidenav">
 
@@ -38,24 +39,26 @@
 					<div class="row">
 						<div class="col-xl-3 col-md-6">
 							<div class="card bg-primary text-white mb-4">
-								<div class="card-body">Primary Card</div>
+								<div class="card-body">Total Employees</div>
 								<div
 									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link" href="#">View
-										Details</a>
+									<h3 class="text-white" href="#">${employeeCount}</h3>
 									<div class="small text-white">
 										<i class="fas fa-angle-right"></i>
 									</div>
 								</div>
 							</div>
+
+
+
+
 						</div>
 						<div class="col-xl-3 col-md-6">
 							<div class="card bg-warning text-white mb-4">
-								<div class="card-body">Warning Card</div>
+								<div class="card-body">Total System Users</div>
 								<div
 									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link" href="#">View
-										Details</a>
+									<h3 class="text-white" href="#">${usersCount}</h3>
 									<div class="small text-white">
 										<i class="fas fa-angle-right"></i>
 									</div>
@@ -64,11 +67,10 @@
 						</div>
 						<div class="col-xl-3 col-md-6">
 							<div class="card bg-success text-white mb-4">
-								<div class="card-body">Success Card</div>
+								<div class="card-body">Total Attendance</div>
 								<div
 									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link" href="#">View
-										Details</a>
+									<h3 class="text-white" href="#">${attendanceCount}</h3>
 									<div class="small text-white">
 										<i class="fas fa-angle-right"></i>
 									</div>
@@ -77,11 +79,10 @@
 						</div>
 						<div class="col-xl-3 col-md-6">
 							<div class="card bg-danger text-white mb-4">
-								<div class="card-body">Danger Card</div>
+								<div class="card-body">Total Salary Cost</div>
 								<div
 									class="card-footer d-flex align-items-center justify-content-between">
-									<a class="small text-white stretched-link" href="#">View
-										Details</a>
+									<h3 class="text-white" href="#">${salaryCost}</h3>
 									<div class="small text-white">
 										<i class="fas fa-angle-right"></i>
 									</div>
