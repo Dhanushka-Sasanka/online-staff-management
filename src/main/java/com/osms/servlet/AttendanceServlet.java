@@ -136,7 +136,6 @@ public class AttendanceServlet extends HttpServlet {
 
         Attendance newAttendance = new Attendance(attendanceID, registerID, chosenDate, new Time(convertedInTime.getTime()),
                 new Time(convertedOutTime.getTime()), description);
-        System.out.println(newAttendance);
         attendanceService.addAttendance(newAttendance);
         response.sendRedirect("list");
 //		response.sendRedirect(Constants.FULL_URL+"/list-attendance.jsp");

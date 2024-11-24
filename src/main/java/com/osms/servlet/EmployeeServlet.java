@@ -124,7 +124,6 @@ public class EmployeeServlet extends HttpServlet {
         Employee newEmployee = new Employee(eid, fullName, email, chosenDate, address);
         employeeService.addEmployee(newEmployee);
         response.sendRedirect("list");
-//		response.sendRedirect(Constants.FULL_URL+"/list-employee.jsp");
     }
 
     public void listEmployee(HttpServletRequest request, HttpServletResponse response)

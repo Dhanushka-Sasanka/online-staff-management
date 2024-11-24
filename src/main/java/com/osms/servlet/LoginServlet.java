@@ -55,38 +55,25 @@ public class LoginServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-
         String action = request.getServletPath();
-
-        System.out.println(action);
-
         if (action.equals("/login")) {
             String message = null;
             String username = request.getParameter("username");
             String password = request.getParameter("password");
-
             try {
-
                 User user = userService.getUserAuthority(username, password);
-
                 if (user != null) {
-
                     if (user.getUserRole().equals("ADMIN")) {
                         HttpSession session = request.getSession();
                         session.setAttribute("valiedUser", user.getUserName());
                         response.sendRedirect("homepage.jsp");
                     }
-
-
                 } else {
-
                     message = "User name or password is incorrect..!";
                     request.setAttribute("message", message);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
                     dispatcher.include(request, response);
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
