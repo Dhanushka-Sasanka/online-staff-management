@@ -1,11 +1,11 @@
 package com.osms.service;
 
+import com.osms.model.User;
+
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
-
-import com.osms.model.User;
 
 public interface UserService {
 

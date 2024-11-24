@@ -1,15 +1,13 @@
 package com.osms.util;
 
-import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class CrudUtil {
 
-	
-	public static PreparedStatement getPreparedStatement(String sql, Object... param) throws FileNotFoundException, SQLException, Exception {
+
+    public static PreparedStatement getPreparedStatement(String sql, Object... param) throws Exception {
         Connection connection = DBConnection.getDBInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
 
@@ -20,12 +18,12 @@ public class CrudUtil {
         return pstm;
     }
 
-    public static boolean executeUpdate(String sql, Object... para) throws FileNotFoundException, SQLException, Exception {
+    public static boolean executeUpdate(String sql, Object... para) throws Exception {
         return getPreparedStatement(sql, para).executeUpdate() > 0;
     }
 
-    public static ResultSet executeQuery(String sql, Object... para) throws FileNotFoundException, SQLException, Exception {
+    public static ResultSet executeQuery(String sql, Object... para) throws Exception {
         return getPreparedStatement(sql, para).executeQuery();
     }
-	
+
 }

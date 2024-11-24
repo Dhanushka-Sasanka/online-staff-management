@@ -1,4 +1,3 @@
-<%@page import="com.osms.servlet.EmployeeServlet"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -25,7 +24,7 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h3 class="mt-4">SALARY DETAILS</h3>
+					<h3 class="mt-4">USER DETAILS</h3>
 
 					<div class="card mb-4">
 						<div class="card-header">

@@ -1,16 +1,16 @@
 package com.osms.service.impl;
 
-import java.io.FileNotFoundException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.osms.model.Salary;
 import com.osms.service.SalaryService;
 import com.osms.util.Constants;
 import com.osms.util.CrudUtil;
 import com.osms.util.IDGenerator;
+
+import java.io.FileNotFoundException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SalaryServiceImpl implements SalaryService {
 
